@@ -15,7 +15,7 @@ function Nav({toggleonMobile, settoggleonMobile}) {
                 !isMobile &&(
            <div className="Logo-container">
                <Avatar src={crypto} alt="crypto"/>
-               <Typography variant="h4" className="title">Cryptoverse</Typography>
+               <Typography variant="h4" className="title">CryptoNet</Typography>
            </div>
                 )
             }
