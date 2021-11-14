@@ -12,7 +12,7 @@ function Linechart({ coinHistory, coinPrice, coinName }) {
   for (let i = 0; i < coinHistory.history.length; i++) {
     coinTimestamp.push(new Date(coinHistory.history[i].timestamp).toLocaleString())
   }
-  console.log(coinHistory.change);
+
   const data = {
     labels: coinTimestamp,
     datasets: [

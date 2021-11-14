@@ -10,16 +10,12 @@ import { Col } from 'antd';
 import Loading from './isLoading';
 import Linechart from './Linechart'
 function CryptoDetails() {
-    console.log('hi');
     const {coinId} = useParams()
-    console.log(coinId);
     const {Option} = Select
     const [timeperiod, settimeperiod] = useState("7d")
     const { data } = useGetCryptoDetailsQuery(coinId)
     const { data:Info, isFetching } = useGetCryptoHistoryQuery({coinId, timeperiod})
     const detailedInfo = data?.data?.coin
-    console.log(Info)
-    console.log(detailedInfo)
     if (isFetching) return <Loading />
     const time = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
     const stats = [
@@ -63,8 +59,8 @@ function CryptoDetails() {
                         <Typography variant="subtitle2">{`An overview showing the statistics of ${detailedInfo?.name}, subh as the base and quote currency, the rank and tranding volume `}</Typography>
                         <Col >
                             {
-                                stats.map(info => (
-                                    <div className="currency-stats">
+                                stats.map((info, i) => (
+                                    <div  key={i}className="currency-stats">
                                         <div style={{ display: 'flex', gap: '.40rem', alignItems: 'center' }}>
                                             {info.icon}
                                             <Typography variant='body2'>{info.title}</Typography>

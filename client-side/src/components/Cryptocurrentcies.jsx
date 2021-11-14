@@ -3,7 +3,7 @@ import millify from "millify";
 import { Col, Card, Row, Input } from "antd";
 import { useGetDataQuery } from "../redux/services/cryptoapi";
 import { Link } from "react-router-dom";
-import { currencies } from "../data/currencies";
+
 import Loading from "./isLoading";
 function Crypto({ filtered }) {
   const count = filtered ? 10 : 100;

@@ -15,7 +15,7 @@ function Main() {
    if(isFetching) return <Loading/>
    
     return (
-        <Grid container style={{gap:'2rem', padding:'3rem', display:"flex", flexDirection:"column"}}>
+        <Grid  container style={{gap:'2rem', padding:'3rem', display:"flex", flexDirection:"column"}}>
             
            <Typography variant="h4" style={{color: '#287CF7',marginTop : "3rem"}} >Global Crypto Stats</Typography>
            <Row gutter={[3,3]} >

@@ -23,6 +23,7 @@
 }
 .nav-bar{
     flex: 0.2;
+    
 }
 .nav-container{
     position: fixed;
@@ -110,8 +111,8 @@ color: white;
 }
 .main{
     align-items: center;
-    flex: 0.8;
-    width: 100%;
+    flex: 1;
+  margin-right: auto;
     transition: all 500ms ease-in;
     overflow-x: hidden;
 }

@@ -14,10 +14,10 @@ function News({ filtered }) {
     const demoImage = 'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News';
     if (isFetching) return <Loading />
     return (
-        <Row gutter={[32, 32]}>
+        <Row  gutter={[32, 32]}>
             {
                 cryptoNews?.value?.map((article, i) => (
-                    <Col span={8} key={i} style={{ padding: !filtered ? '2rem' : "0rem" }}>
+                    <Grid item sm={12} lg={4} md={6} key={i} style={{ padding: !filtered ? '2rem' : "0rem" }}>
                         <a href={article.url} rel='noreferrer' target='_blank' style={{ gap: '2rem' }}>
                             <Card hoverable className='news-card'  >
                                 <div style={{ display: 'flex', padding: '.30rem' }}>
@@ -42,7 +42,7 @@ function News({ filtered }) {
                                 </div>
                             </Card>
                         </a>
-                    </Col>
+                    </Grid>
                 ))
             }
         </Row>

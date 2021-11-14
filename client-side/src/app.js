@@ -19,7 +19,7 @@ function App() {
                     <Layout>
                         {
                             isMobile && (
-                                <AppBar style={{backgroundColor : "rgb(0, 21, 41)"}}>
+                                <AppBar color='primary'>
                                     <Toolbar  >
                                         {
                                             !toggleonMobile ? (
