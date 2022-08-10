@@ -1,11 +1,12 @@
 import { fetchBaseQuery, createApi } from "@reduxjs/toolkit/query/react";
+import dotenv from "dotenv";
+dotenv.config();
 //Headers
 const baseUrl = "https://coinranking1.p.rapidapi.com/v2";
 const cryptoheader = {
   "x-rapidapi-host": "coinranking1.p.rapidapi.com",
-  "x-rapidapi-key": "b3492e5594msh0c50473b6171954p12243fjsn8445e027f91c",
-  "x-acess-token":
-    "coinranking44f13bb69dc7f555c321d33ed0efe38bef609c37581d4aea",
+  "x-rapidapi-key": process.env.CRYPTO_API_KEY,
+  "x-acess-token": process.env.CRYPTO_API_TOKEN,
 };
 // const baseUrl = 'http://localhost:5000'
 //create a query instance
