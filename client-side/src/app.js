@@ -16,24 +16,45 @@ import { MenuOutlined, CloseOutlined } from "@material-ui/icons";
 function App() {
   const isMobile = useMediaQuery("(max-width:700px)");
   const [toggleonMobile, settoggleonMobile] = useState(false);
-
+  const [erroMessage, seterrorMessage] = useState("");
   return (
     <div className="app">
-      <Grid item /* sm={0} md={4} lg={3} */ className="nav-bar">
+      <Grid item className="nav-bar">
         <Nav
           toggleonMobile={toggleonMobile}
           settoggleonMobile={settoggleonMobile}
         />
       </Grid>
-      <Grid item /* sm={12} xs={12} md={8} lg={9}  */ className="main">
+      <Grid item className="main">
+        {!isMobile && erroMessage && (
+          <div
+            style={{
+              padding: "1rem 3rem",
+              backgroundColor: "#3586ff",
+              color: "white",
+              position: "fixed",
+              inset: "auto auto auto auto",
+              margin: "1rem auto",
+              zIndex: "130",
+            }}
+            className="error_message"
+          >
+            {erroMessage}
+          </div>
+        )}
         <Layout>
           {isMobile && (
             <AppBar color="primary">
               <Toolbar>
                 {!toggleonMobile ? (
-                  <div onClick={() => settoggleonMobile(true)}>
-                    <MenuOutlined fontSize="small" />
-                  </div>
+                  <>
+                    <div onClick={() => settoggleonMobile(true)}>
+                      <MenuOutlined fontSize="small" />
+                    </div>
+                    <div style={{ transform: "translateX(100px)" }}>
+                      {erroMessage && erroMessage}
+                    </div>
+                  </>
                 ) : (
                   <CloseOutlined
                     fontSize="small"
@@ -46,7 +67,7 @@ function App() {
           <div className="routes" onClick={() => settoggleonMobile(false)}>
             <Switch>
               <Route path="/" exact>
-                <Main toggleonMobile={toggleonMobile} />
+                <Main seterrorMessage={seterrorMessage} />
               </Route>
               <Route path="/cryptocurrencies" exact>
                 <Crypto />

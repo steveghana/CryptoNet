@@ -1,5 +1,5 @@
 import React from 'react'
-import { Line, Bar } from 'react-chartjs-2'
+import { Line } from 'react-chartjs-2'
 import { Typography } from '@material-ui/core'
 import millify from 'millify'
 import { currencies } from '../data/currencies'
